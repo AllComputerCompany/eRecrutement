@@ -1,9 +1,6 @@
 # eRecrutement platform
 
-ERecrutement is a small flatform for search jobs. 
-
-## Tutorial 
-Take the full tutorial here on [Udemy](https://www.udemy.com/web-development-with-php-build-a-nice-job-recruitment-site/)
+ERecrutement is a small platform for search jobs. 
 
 ## Installation
 clone the eRecrutement source in your directory:
