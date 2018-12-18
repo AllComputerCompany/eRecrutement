@@ -1,4 +1,4 @@
-# RawPHP Framework
+# eRecrutement platform
 
 ERecrutement is a small flatform for search jobs. 
 
