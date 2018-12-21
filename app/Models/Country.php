@@ -21,7 +21,8 @@ class Country extends Model
 {
 	
 	//optional: define table name if different from 'posts'
-	protected $table = 'countries';
+    protected $table = 'countries';
+    public $timestamps = false;
 	
 	protected $fillable = [
 		'id',

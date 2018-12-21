@@ -64,9 +64,8 @@ class CountriesController extends Controller{
 		}
 		
             $country =Country::create([
-                'title' => $request->getParam('title'),
-                'body' => $request->getParam('body'),
-                'user_id' => $this->auth->user()->id,
+                'name' => $request->getParam('name'),
+                'code' => $request->getParam('code'),
             ]);
 
                 $this->flash->addMessage('success', 'country Added Successfully');
