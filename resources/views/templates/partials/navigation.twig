@@ -4,7 +4,7 @@
               <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-01">
                 <span class="sr-only">Toggle navigation</span>
               </button>
-              <a class="navbar-brand" href="{{ path_for('home')}}">RawPHP</a>
+              <a class="navbar-brand" href="{{ path_for('home')}}">eRecrutement</a>
             </div>
             <div class="collapse navbar-collapse" id="navbar-collapse-01">
               <ul class="nav navbar-nav navbar-right">
@@ -39,7 +39,7 @@
                           {% endif %}
                 
                 {% else %}
-                 <li><a href="{{ path_for('auth.signup')}}"><i class="fa fa-sign-in" aria-hidden="true"></i> Signup</a></li>
+                 <li><a href="{{ path_for('auth.signup')}}"> <i class="fas fa-sign-in-alt"></i> <i class="fa fa-sign-in" aria-hidden="true"></i> Signup</a></li>
                  <li><a href="{{ path_for('auth.signin')}}"><i class="fa fa-unlock" aria-hidden="true"></i> Signin</a></li>
                 
                 {% endif %}

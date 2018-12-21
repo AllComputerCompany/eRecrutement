@@ -9,7 +9,7 @@ use App\Models\Post;
 class PostsController extends Controller{
 	
 	/**
-	* List all users
+	* List all posts
 	* 
 	* @return
 	*/
