@@ -90,7 +90,7 @@ class CountriesController extends Controller{
             $country =Country::find( $args['id']);
 
 			//only admin and the person that created the country can edit or delete it.
-			if(($this->auth->user()->id != $country->user_id) AND ($this->auth->user()->role_id > 2 ) ){
+			if($this->auth->user()->role_id < 3){
                 
 			$this->flash->addMessage('error', 'You are not allowed to perform this action!'); 
 		
@@ -99,11 +99,11 @@ class CountriesController extends Controller{
 			}
 
         //if form was submitted
-        if($request->iscountry()){
+        if($request->isPost()){
         
          $validation = $this->validator->validate($request, [
-                'title' => v::notEmpty(),	
-                'body' => v::notEmpty(),	
+                'name' => v::notEmpty(),	
+                'code' => v::notEmpty(),	
             ]);
         //redirect if validation fails
 		if($validation->failed()){
@@ -115,8 +115,8 @@ class CountriesController extends Controller{
             //save Data
             $country = Country::where('id', $args['id'])
                             ->update([
-                                'title' => $request->getParam('title'),
-                                'body' => $request->getParam('body')
+                                'name' => $request->getParam('name'),
+                                'code' => $request->getParam('code')
                                 ]);
             
             if($country){
@@ -138,10 +138,10 @@ class CountriesController extends Controller{
 	* @return
 	*/
 	public function delete($request, $response,  $args){
-		$user =Country::find( $args['id']);
+		$country =Country::find( $args['id']);
 		
 		//only owner and admin can delete
-		if(($this->auth->user()->id != $country->user_id) AND ($this->auth->user()->role_id > 2 ) ){
+		if($this->auth->user()->role_id < 3 ){
                 
 			$this->flash->addMessage('error', 'You are not allowed to perform this action!'); 
 		
@@ -150,7 +150,7 @@ class CountriesController extends Controller{
 			}
 			
 			
-		if($user->delete()){
+		if($country->delete()){
 			$this->flash->addMessage('success', 'country Deleted Successfully');
 			return $response->withRedirect($this->router->pathFor('countries.index', ['user_id'=>$this->auth->user()->id]));
 		}
