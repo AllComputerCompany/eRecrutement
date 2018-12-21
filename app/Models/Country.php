@@ -17,7 +17,7 @@ use Illuminate\Database\Eloquent\Model;
 //use Cake\ORM\TableRegistry; 
 
 
-class Post extends Model
+class Country extends Model
 {
 	
 	//optional: define table name if different from 'posts'
