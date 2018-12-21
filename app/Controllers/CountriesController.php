@@ -43,7 +43,7 @@ class CountriesController extends Controller{
 	*/
 	public function add($request, $response,  $args){
 	
-        if($request->iscountry()){
+        if($request->isPost()){
            
             /**
             * validate input before submission
@@ -51,8 +51,8 @@ class CountriesController extends Controller{
             * 
             */ 
             $validation = $this->validator->validate($request, [
-                'title' => v::notEmpty(),	
-                'body' => v::notEmpty(),	
+				'name' => v::notEmpty(),
+				'code' => v::notEmpty()
             ]);
 
 

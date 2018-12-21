@@ -70,6 +70,14 @@ $app->get('/posts/view/{id}', 'PostsController:view')->setName('posts.view');
 $app->get('/posts/delete/{id}', 'PostsController:delete')->setName('posts.delete');
 
 
+//countries routes
+$app->get('/countries/index[/{user_id}]', 'CountriesController:index')->setName('countries.index'); //Optional user_id parameter
+$app->map(['POST', 'GET'], '/countries/add/', 'CountriesController:add')->setName('countries.add');
+$app->map(['POST', 'GET'], '/countries/edit/{id}', 'CountriesController:edit')->setName('countries.edit');
+$app->get('/countries/view/{id}', 'CountriesController:view')->setName('countries.view');
+$app->get('/countries/delete/{id}', 'CountriesController:delete')->setName('countries.delete');
+
+
 
 
 })->add(new AuthMiddleware($container));
