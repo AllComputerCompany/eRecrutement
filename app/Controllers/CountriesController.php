@@ -152,7 +152,7 @@ class CountriesController extends Controller{
 			
 		if($country->delete()){
 			$this->flash->addMessage('success', 'country Deleted Successfully');
-			return $response->withRedirect($this->router->pathFor('countries.index', ['user_id'=>$this->auth->user()->id]));
+			return $response->withRedirect($this->router->pathFor('countries.index'));
 		}
 	}
 
