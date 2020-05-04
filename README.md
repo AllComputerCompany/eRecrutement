@@ -4,10 +4,10 @@ ERecrutement is a small platform for search jobs.
 
 ## Installation
 clone the eRecrutement source in your directory:
-`https://github.com/AllComputerCompany/eRecrutement.git`
+`https://github.com/bzerourou/eRecrutement.git`
 
 and instal all dependancies with composer :
-`https://github.com/AllComputerCompany/eRecrutement.git`
+`https://github.com/bzerourou/eRecrutement.git`
 
 
 ### Running your app
